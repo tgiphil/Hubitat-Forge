@@ -1,0 +1,16 @@
+name: Groovy Syntax Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  syntax-check:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Groovy syntax check
+        shell: pwsh
+        run: .\scripts\Check-GroovySyntax.ps1 -InstallGroovy

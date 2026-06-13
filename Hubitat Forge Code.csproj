@@ -10,4 +10,7 @@
   <ItemGroup>
     <Folder Include="Drivers\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".github\workflows\groovy-syntax-check.yml" />
+  </ItemGroup>
 </Project>

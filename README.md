@@ -1,6 +1,6 @@
 # Hubitat Forge
 
-This repository contains multiple Hubitat feature areas organized by folder.
+This repository contains multiple Hubitat features organized by folder.
 
 ## Areas
 
@@ -14,11 +14,25 @@ Open the README inside the area you want to work on:
 - `VirtualPresence/README.md`
 - `TuyaSNZB02/README.md`
 
-## Repository structure
+## Groovy syntax checks
 
-- one solution
-- one project
-- area-specific documentation and source grouped together in subfolders
+The Hubitat Groovy files are validated with a local syntax-check script instead of the dummy .NET build.
+
+- Prerequisite: Groovy 5 (`groovyc`) installed locally, or use the script with `-InstallGroovy` on Windows
+- Script: `scripts/Check-GroovySyntax.ps1`
+- CI: `.github/workflows/groovy-syntax-check.yml`
+
+Run it locally from PowerShell:
+
+```powershell
+.\scripts\Check-GroovySyntax.ps1
+```
+
+If Groovy is not installed and `winget` is available:
+
+```powershell
+.\scripts\Check-GroovySyntax.ps1 -InstallGroovy
+```
 
 ## License
 
