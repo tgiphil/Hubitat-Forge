@@ -6,6 +6,7 @@ Virtual Presence Detector is a Hubitat presence automation area for creating vir
 
 - `Apps/VirtualPresenceDetectorApp.groovy` — automation app
 - `Drivers/VirtualPresenceDetectorDriver.groovy` — virtual presence device driver
+- `packageManifest.json` — Hubitat Package Manager package definition
 - `INSTALLATION.md` — installation and troubleshooting
 - `Specification.md` — detailed implementation specification
 
@@ -18,5 +19,5 @@ Virtual Presence Detector is a Hubitat presence automation area for creating vir
 
 ## Start here
 
-- Read `INSTALLATION.md` for setup
+- Use the HPM manifest in `packageManifest.json` or read `INSTALLATION.md` for manual setup
 - Read `Specification.md` for implementation details

@@ -1,0 +1,20 @@
+{
+  "packageName": "Tuya SNZB-02 Temperature and Humidity Sensor",
+  "minimumHEVersion": "2.1.9",
+  "author": "phil@thinkedge.com",
+  "version": "1.0.0",
+  "dateReleased": "2026-06-13",
+  "documentationLink": "https://raw.githubusercontent.com/tgiphil/Hubitat-Forge/master/TuyaSNZB02/INSTALLATION.md",
+  "communityLink": "https://github.com/tgiphil/Hubitat-Forge",
+  "licenseFile": "https://raw.githubusercontent.com/tgiphil/Hubitat-Forge/master/LICENSE.txt",
+  "releaseNotes": "Initial Hubitat Package Manager package for the Tuya SNZB-02 temperature and humidity sensor driver.",
+  "drivers": [
+    {
+      "id": "02a34bdf-5324-483c-84c5-f9b1fc2552c8",
+      "name": "Tuya SNZB-02 Temperature Humidity Sensor",
+      "namespace": "tgiphil",
+      "location": "https://raw.githubusercontent.com/tgiphil/Hubitat-Forge/master/TuyaSNZB02/Drivers/TuyaSnzb02TemperatureHumidityDriver.groovy",
+      "required": true
+    }
+  ]
+}

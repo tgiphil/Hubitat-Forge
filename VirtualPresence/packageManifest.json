@@ -1,0 +1,30 @@
+{
+  "packageName": "Virtual Presence Detector",
+  "minimumHEVersion": "2.1.9",
+  "author": "phil@thinkedge.com",
+  "version": "1.0.0",
+  "dateReleased": "2026-06-13",
+  "documentationLink": "https://raw.githubusercontent.com/tgiphil/Hubitat-Forge/master/VirtualPresence/INSTALLATION.md",
+  "communityLink": "https://github.com/tgiphil/Hubitat-Forge",
+  "licenseFile": "https://raw.githubusercontent.com/tgiphil/Hubitat-Forge/master/LICENSE.txt",
+  "releaseNotes": "Initial Hubitat Package Manager package for the Virtual Presence Detector app and driver.",
+  "apps": [
+    {
+      "id": "ae2ae395-204c-4268-a821-0572ecc6c530",
+      "name": "Virtual Presence Detector App",
+      "namespace": "tgiphil",
+      "location": "https://raw.githubusercontent.com/tgiphil/Hubitat-Forge/master/VirtualPresence/Apps/VirtualPresenceDetectorApp.groovy",
+      "required": true,
+      "primary": true
+    }
+  ],
+  "drivers": [
+    {
+      "id": "657e930d-add2-4bcf-a83a-d0e03519c00e",
+      "name": "Virtual Presence Detector",
+      "namespace": "tgiphil",
+      "location": "https://raw.githubusercontent.com/tgiphil/Hubitat-Forge/master/VirtualPresence/Drivers/VirtualPresenceDetectorDriver.groovy",
+      "required": true
+    }
+  ]
+}

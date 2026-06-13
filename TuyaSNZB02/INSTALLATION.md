@@ -1,6 +1,27 @@
 # Tuya SNZB-02 Installation & Usage
 
+## Hubitat Package Manager Installation
+
+If you want to install or share the Tuya SNZB-02 driver through Hubitat Package Manager, use this package manifest URL:
+
+`https://raw.githubusercontent.com/tgiphil/Hubitat-Forge/master/TuyaSNZB02/packageManifest.json`
+
+To make the package available to other users, keep the repository public, keep the manifest version in sync with each release, and publish GitHub releases or tags alongside code updates.
+
+---
+
 ## Install the driver
+
+### Option A: Install with Hubitat Package Manager
+
+1. Open Hubitat Package Manager
+2. Add a custom package source using the manifest URL above
+3. Install **Tuya SNZB-02 Temperature and Humidity Sensor** from the package list
+4. Follow the configuration prompts
+
+---
+
+### Option B: Manual Install
 
 1. Open Hubitat Web UI and go to **Code**.
 2. Click **+ Create new driver**.

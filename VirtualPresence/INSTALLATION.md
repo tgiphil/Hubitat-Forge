@@ -11,7 +11,28 @@ Each app instance automatically creates one child virtual presence detector devi
 
 ---
 
+## Hubitat Package Manager Installation
+
+If you want to install or share Virtual Presence Detector through Hubitat Package Manager, use this package manifest URL:
+
+`https://raw.githubusercontent.com/tgiphil/Hubitat-Forge/master/VirtualPresence/packageManifest.json`
+
+To make the package available to other users, keep the repository public, keep the manifest version in sync with each release, and publish GitHub releases or tags alongside code updates.
+
+---
+
 ## Installation Steps
+
+### Option A: Install with Hubitat Package Manager
+
+1. Open Hubitat Package Manager
+2. Add a custom package source using the manifest URL above
+3. Install **Virtual Presence Detector** from the package list
+4. Follow the configuration prompts
+
+---
+
+### Option B: Manual Install
 
 ### Step 1: Install the Driver
 

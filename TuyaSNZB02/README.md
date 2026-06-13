@@ -5,6 +5,7 @@ Tuya SNZB-02 is a Hubitat Zigbee driver area for the SNZB-02 temperature and hum
 ## Files in this area
 
 - `Drivers/TuyaSnzb02TemperatureHumidityDriver.groovy` — Zigbee driver
+- `packageManifest.json` — Hubitat Package Manager package definition
 - `INSTALLATION.md` — installation and usage
 - `Specification.md` — detailed implementation specification
 
@@ -18,5 +19,5 @@ Tuya SNZB-02 is a Hubitat Zigbee driver area for the SNZB-02 temperature and hum
 
 ## Start here
 
-- Read `INSTALLATION.md` for setup
+- Use the HPM manifest in `packageManifest.json` or read `INSTALLATION.md` for manual setup
 - Read `Specification.md` for implementation details
