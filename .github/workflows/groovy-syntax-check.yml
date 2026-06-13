@@ -11,6 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Download and install Groovy
+        shell: pwsh
+        run: winget install --id Apache.Groovy.5 --silent --accept-package-agreements --accept-source-agreements
+
       - name: Run Groovy syntax check
         shell: pwsh
-        run: .\scripts\Check-GroovySyntax.ps1 -InstallGroovy
+        run: .\scripts\Check-GroovySyntax.ps1
