@@ -1,0 +1,20 @@
+{
+  "packageName": "HOBEIAN ZG-102Z Contact Sensor",
+  "minimumHEVersion": "2.1.9",
+  "author": "phil@thinkedge.com",
+  "version": "1.0.0",
+  "dateReleased": "2026-06-13",
+  "documentationLink": "https://raw.githubusercontent.com/tgiphil/Hubitat-Forge/master/HobeianZG102Z/INSTALLATION.md",
+  "communityLink": "https://github.com/tgiphil/Hubitat-Forge",
+  "licenseFile": "https://raw.githubusercontent.com/tgiphil/Hubitat-Forge/master/LICENSE.txt",
+  "releaseNotes": "Initial Hubitat Package Manager package for the HOBEIAN ZG-102Z contact sensor driver.",
+  "drivers": [
+    {
+      "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "name": "HOBEIAN ZG-102Z Contact Sensor",
+      "namespace": "tgiphil",
+      "location": "https://raw.githubusercontent.com/tgiphil/Hubitat-Forge/master/HobeianZG102Z/Drivers/HobeianZg102zContactSensorDriver.groovy",
+      "required": true
+    }
+  ]
+}
