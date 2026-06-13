@@ -1,6 +1,6 @@
 # Tuya SNZB-02 Temperature and Humidity Sensor Driver Specification
 
-Filename: `Specification.TuyaSNZB02.md`
+Filename: `Specification.md`
 
 This specification defines a dedicated Hubitat Groovy Zigbee driver for the Tuya/SNZB-02 temperature and humidity sensor variant identified by model `SNZB-02` and manufacturer `_TZ3000_utwgoauk`.
 

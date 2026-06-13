@@ -17,7 +17,7 @@ Each app instance automatically creates one child virtual presence detector devi
 
 1. Open Hubitat Web UI → **Code** page
 2. Click **+ Create new driver**
-3. Copy the entire contents of `Drivers/VirtualPresenceDetectorDriver.groovy`
+3. Copy the entire contents of `VirtualPresence/Drivers/VirtualPresenceDetectorDriver.groovy`
 4. Paste into the new driver code editor
 5. Click **Save** at bottom right
 6. Click **Publish** (or **Publish for me** if prompted)
@@ -30,7 +30,7 @@ Each app instance automatically creates one child virtual presence detector devi
 
 1. Open Hubitat Web UI → **Code** page
 2. Click **+ Create new app**
-3. Copy the entire contents of `Apps/VirtualPresenceDetectorApp.groovy`
+3. Copy the entire contents of `VirtualPresence/Apps/VirtualPresenceDetectorApp.groovy`
 4. Paste into the new app code editor
 5. Click **Save** at bottom right
 6. Click **Publish** (or **Publish for me** if prompted)

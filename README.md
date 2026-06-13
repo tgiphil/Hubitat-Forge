@@ -23,12 +23,12 @@ This allows Hubitat automations to depend on simple virtual presence devices ins
 
 1. **Install the Driver**
    - Open Hubitat Web UI → Code → Create new driver
-   - Copy contents of `Drivers/VirtualPresenceDetectorDriver.groovy`
+	  - Copy contents of `VirtualPresence/Drivers/VirtualPresenceDetectorDriver.groovy`
    - Save and Publish
 
 2. **Install the App**
    - Open Hubitat Web UI → Code → Create new app
-   - Copy contents of `Apps/VirtualPresenceDetectorApp.groovy`
+	  - Copy contents of `VirtualPresence/Apps/VirtualPresenceDetectorApp.groovy`
    - Save and Publish
 
 3. **Create an App Instance**
@@ -67,10 +67,12 @@ Create app instance "Home Presence"
 
 ## Files
 
-- **`Drivers/VirtualPresenceDetectorDriver.groovy`** — Virtual presence device driver (370 lines)
-- **`Apps/VirtualPresenceDetectorApp.groovy`** — Automation app (650 lines)
-- **`Specification.md`** — Complete specification with all requirements and design decisions
-- **`INSTALLATION.md`** — Detailed setup guide, configuration, troubleshooting, examples
+- **`VirtualPresence/Drivers/VirtualPresenceDetectorDriver.groovy`** — Virtual presence device driver (370 lines)
+- **`VirtualPresence/Apps/VirtualPresenceDetectorApp.groovy`** — Automation app (650 lines)
+- **`VirtualPresence/Specification.VirtualPresenceDetector.md`** — Complete specification with all requirements and design decisions
+- **`VirtualPresence/INSTALLATION.VirtualPresenceDetector.md`** — Detailed setup guide, configuration, troubleshooting, examples
+- **`TuyaSNZB02/Drivers/TuyaSnzb02TemperatureHumidityDriver.groovy`** — Temperature and humidity sensor driver
+- **`TuyaSNZB02/Specification.TuyaSNZB02.md`** — Temperature and humidity sensor driver specification
 - **`CODE_GENERATION_SUMMARY.md`** — Compliance checklist and implementation notes
 
 ## Device Attributes
