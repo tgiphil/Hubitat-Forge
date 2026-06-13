@@ -61,7 +61,6 @@ preferences {
 // Called when app is first installed
 def installed() {
 	logDebug("installed()")
-	ensureAppLabel()
 	ensureOutputDevice()
 	updated()
 }
@@ -143,6 +142,7 @@ def ensureOutputDevice() {
 			logDebug("Updated device label to: ${labelForDevice}")
 		}
 
+		validateOutputDevice(existingDevice)
 		return existingDevice
 	}
 
@@ -155,6 +155,7 @@ def ensureOutputDevice() {
 	try {
 		def newDevice = addChildDevice("tgiphil", "Virtual Presence Detector", dni, options)
 		logDebug("Successfully created child device: ${newDevice.displayName} (${dni})")
+		validateOutputDevice(newDevice)
 		return newDevice
 	} catch (Exception e) {
 		logError("Failed to create child device: ${e.message}")
@@ -178,6 +179,20 @@ Boolean isSelfOutputDevice(def device) {
 	if (!device) return false
 	def outputDevice = getOutputDevice()
 	return outputDevice && device.id == outputDevice.id
+}
+
+/**
+ * Validate that the managed output device exposes the expected public commands.
+ * Logs a warning for any missing command; does not crash.
+ */
+def validateOutputDevice(def outputDevice) {
+	if (!outputDevice) return
+	List requiredCommands = ["extendPresence", "expirePresence", "setTimeoutSeconds"]
+	for (String cmd in requiredCommands) {
+		if (!outputDevice.hasCommand(cmd)) {
+			log.warn("[${appLabel()}] Managed output device '${outputDevice.displayName}' is missing expected command: ${cmd}")
+		}
+	}
 }
 
 // ===== EVENT SUBSCRIPTIONS =====
@@ -458,9 +473,11 @@ Boolean hasMonitoredPresenceStillPresent() {
 		return false
 	}
 
+	def outputDevice = getOutputDevice()
+
 	for (def device in presenceDevices) {
 		// Skip self-monitoring
-		if (isSelfOutputDevice(device)) {
+		if (outputDevice && device.id == outputDevice.id) {
 			logDebug("Skipping self-output device during presence check: ${device.displayName}")
 			continue
 		}
@@ -520,7 +537,7 @@ def ensureAppLabel() {
  * Resolve the managed child device label.
  */
 String managedDeviceLabel() {
-	return appLabel() ?: "Virtual Presence Detector"
+	return appLabel()
 }
 
 /**
