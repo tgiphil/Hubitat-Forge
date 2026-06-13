@@ -7,4 +7,7 @@
 	<!-- Project is a lightweight container for non-build content (Groovy files) -->
 	<IsPackable>false</IsPackable>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Drivers\" />
+  </ItemGroup>
 </Project>
