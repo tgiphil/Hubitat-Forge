@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	<TargetFramework>net8.0</TargetFramework>
+	<OutputType>Library</OutputType>
+	<AssemblyName>Hubitat</AssemblyName>
+	<RootNamespace>Hubitat</RootNamespace>
+	<!-- Project is a lightweight container for non-build content (Groovy files) -->
+	<IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<None Include="Specification.VirtualPresenceDetector.md">
+	  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	</None>
+  </ItemGroup>
+</Project>
