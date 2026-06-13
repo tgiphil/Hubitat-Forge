@@ -54,7 +54,6 @@ Driver name:
 Capabilities:
 
 - `ContactSensor`
-- `TamperAlert`
 - `Battery`
 - `Sensor`
 - `Refresh`
@@ -85,12 +84,10 @@ Parse the 16-bit zone-status hex value and evaluate the following bits:
 | Bit | Mask   | Meaning                             |
 |-----|--------|-------------------------------------|
 | 0   | 0x0001 | Alarm1 — contact is open            |
-| 2   | 0x0004 | Tamper — tamper detected            |
 
 Emit events:
 
 - `name: "contact"`, value: `"open"` (bit 0 set) or `"closed"` (bit 0 clear)
-- `name: "tamper"`, value: `"detected"` (bit 2 set) or `"clear"` (bit 2 clear)
 
 Examples from logs:
 
@@ -139,6 +136,8 @@ Behavior:
 - Ignore unknown clusters/attributes safely
 - Do not throw for malformed messages; log debug details when enabled
 - Descriptions that do not match a known pattern are logged at debug level and ignored
+- Cluster `0x0013` (Device Announce) and cluster `0x8021` (Bind Response) are silently ignored as expected Zigbee protocol housekeeping messages
+- Command-response frames (e.g., Configure Reporting Response on cluster `0x0001`) carry no attribute data and are ignored by the missing-attr/value guard
 
 ---
 
@@ -149,8 +148,7 @@ The driver is considered valid when:
 1. Device fingerprints correctly during pairing for model/manufacturer above.
 2. `zone status 0x0001` description produces `contact: open`.
 3. `zone status 0x0000` description produces `contact: closed`.
-4. Zone status with bit 2 set produces `tamper: detected`.
-5. Battery events populate correctly from cluster `0x0001` reports.
+4. Battery events populate correctly from cluster `0x0001` reports.
 6. `refresh()` returns updated battery values without error.
 7. `configure()` executes without runtime errors.
 
@@ -167,7 +165,7 @@ These inputs should map to stable contact/tamper/battery attribute events.
 
 ## Device Driver Guidelines
 
-- Event descriptionText should follow: `'{Device Name} {contact, tamper, battery, battery voltage} is {value}'`.
+- Event descriptionText should follow: `'{Device Name} {contact, battery, battery voltage} is {value}'`.
 
 ## Sensor Event Guidelines
 

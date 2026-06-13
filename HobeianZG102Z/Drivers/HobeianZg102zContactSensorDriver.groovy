@@ -14,7 +14,6 @@ metadata {
 		author: "phil@thinkedge.com"
 	) {
 		capability "ContactSensor"
-		capability "TamperAlert"
 		capability "Battery"
 		capability "Sensor"
 		capability "Refresh"
@@ -107,13 +106,9 @@ private void handleZoneStatus(String description) {
 	Integer zoneStatus = Integer.parseInt(matcher.group(1), 16)
 
 	boolean alarm1 = (zoneStatus & 0x0001) != 0
-	boolean tamper = (zoneStatus & 0x0004) != 0
 
 	String contact = alarm1 ? "open" : "closed"
 	sendEvent(name: "contact", value: contact, descriptionText: metricDescription("contact", contact))
-
-	String tamperState = tamper ? "detected" : "clear"
-	sendEvent(name: "tamper", value: tamperState, descriptionText: metricDescription("tamper", tamperState))
 }
 
 private void handleDescriptionMap(Map descMap) {
@@ -128,6 +123,11 @@ private void handleDescriptionMap(Map descMap) {
 
 	if (cluster == "0013") {
 		logDebug("Ignoring catchall cluster 0013 message")
+		return
+	}
+
+	if (cluster == "8021") {
+		logDebug("Ignoring bind response cluster 8021 message")
 		return
 	}
 
