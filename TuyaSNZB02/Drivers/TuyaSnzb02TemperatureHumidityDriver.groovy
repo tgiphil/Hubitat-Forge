@@ -230,11 +230,10 @@ private void handleBattery(String attrId, String valueHex) {
 		}
 		break
 
-		default:
-			logDebug("Unhandled battery attr ${attrId} value ${valueHex}")
-			break
+	default:
+		logDebug("Unhandled battery attr ${attrId} value ${valueHex}")
+		break
 	}
-}
 
 private Integer estimateBatteryPercentFromVoltage(BigDecimal volts) {
 	if (volts == null) {

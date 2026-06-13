@@ -25,7 +25,6 @@ metadata {
 		command "extendPresence", [[name: "timeoutSeconds", type: "NUMBER", description: "Timeout in seconds"]]
 		command "expirePresence", [[name: "reason", type: "STRING", description: "Reason for expiration"]]
 		command "resetPresence"
-		command "deviceNotification", [[name: "text", type: "STRING", description: "Notification text"]]
 
 		// Attributes
 		attribute "presence", "enum", ["present", "not present"]
